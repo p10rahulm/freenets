@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from freenet import FreeNet
-from data import generate_data
+from data_generator import generate_data
 
 
 class Trainer:
