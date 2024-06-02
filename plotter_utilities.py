@@ -20,15 +20,12 @@ def plot_results(model, x, y, coefficients, final_loss, output_dir, filename, de
     # Plotting
     sns.set(style="whitegrid")
     plt.figure(figsize=(10, 6))
-    plt.scatter(x, y, color='blue', label='Original data', alpha=0.6, edgecolors='w', linewidth=0.5)
+    plt.scatter(x, y, color='blue', label='Original data', alpha=0.6)
     plt.plot(test_x.numpy(), test_y.numpy(), color='red', label='Fitted line')
     plt.xlabel('x', fontsize=14)
     plt.ylabel('y', fontsize=14)
     plt.title(title_str, fontsize=16)
     plt.legend()
-
-    # Show the plot
-    plt.show()
 
     # Save the plot
     if not os.path.exists(output_dir):
@@ -36,4 +33,7 @@ def plot_results(model, x, y, coefficients, final_loss, output_dir, filename, de
 
     filepath = os.path.join(output_dir, f"{filename}.pdf")
     plt.savefig(filepath, bbox_inches='tight')
+
+    # Show the plot
+    plt.show()
     plt.close()
